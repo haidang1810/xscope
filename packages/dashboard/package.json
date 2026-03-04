@@ -1,0 +1,29 @@
+{
+  "name": "@xscope/dashboard",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@xscope/shared": "workspace:*",
+    "framer-motion": "^12",
+    "html-to-image": "^1.11.13",
+    "html2canvas": "^1.4.1",
+    "react": "^19",
+    "react-dom": "^19",
+    "recharts": "^2",
+    "zustand": "^5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vite": "^6"
+  }
+}

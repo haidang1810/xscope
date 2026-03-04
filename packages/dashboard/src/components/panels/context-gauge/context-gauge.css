@@ -1,0 +1,87 @@
+/* Context Window Gauge panel styles */
+
+.context-gauge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 4px 0;
+  gap: 6px;
+}
+
+.context-gauge-beaker {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Warning state: pulsing border glow */
+.context-gauge.is-warning .context-gauge-beaker {
+  filter: drop-shadow(0 0 8px rgba(255, 170, 0, 0.6));
+}
+
+/* Critical state: red glow + flash animation */
+.context-gauge.is-critical .context-gauge-beaker {
+  filter: drop-shadow(0 0 12px rgba(255, 51, 68, 0.8));
+  animation: critical-flash 1.2s ease-in-out infinite;
+}
+
+@keyframes critical-flash {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.7; }
+}
+
+/* Warning text */
+.context-warning-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent-danger);
+  letter-spacing: 0.04em;
+  animation: warning-pulse 1s ease-in-out infinite;
+  text-align: center;
+}
+
+@keyframes warning-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+/* Turns remaining estimate */
+.context-turns-remaining {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.context-turns-remaining strong {
+  color: var(--text-primary);
+}
+
+/* Percent stats row */
+.context-stats-row {
+  display: flex;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.context-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.context-stat-label {
+  font-size: 9px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.context-stat-value {
+  font-weight: 700;
+  color: var(--text-primary);
+}

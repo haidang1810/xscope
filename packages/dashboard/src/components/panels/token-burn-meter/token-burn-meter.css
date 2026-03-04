@@ -1,0 +1,111 @@
+/* Token Burn Meter panel styles */
+
+.token-burn-meter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.burn-gauge-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  flex-shrink: 1;
+}
+
+.speedometer-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Token stats row: input / output */
+.burn-token-stats {
+  display: flex;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.burn-token-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.burn-token-stat-label {
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 9px;
+}
+
+.burn-token-stat-value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.burn-token-stat-value.input-color {
+  color: var(--accent-secondary);
+}
+
+.burn-token-stat-value.output-color {
+  color: var(--accent-primary);
+}
+
+/* Cost counter */
+.cost-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+}
+
+.cost-display {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.cost-dollar {
+  font-size: 14px;
+  color: var(--accent-warning);
+  font-weight: 700;
+}
+
+.cost-digits {
+  display: flex;
+  align-items: baseline;
+  overflow: hidden;
+  height: 24px;
+}
+
+.cost-digit {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-warning);
+  line-height: 24px;
+}
+
+.coffee-comparison {
+  font-size: 10px;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+/* High burn glow effect on the panel */
+.token-burn-meter.burn-high .burn-gauge-wrapper {
+  filter: drop-shadow(0 0 12px rgba(255, 51, 102, 0.5));
+}
+
+.token-burn-meter.burn-medium .burn-gauge-wrapper {
+  filter: drop-shadow(0 0 8px rgba(255, 170, 0, 0.4));
+}

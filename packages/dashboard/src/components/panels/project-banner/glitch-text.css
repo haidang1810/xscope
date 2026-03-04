@@ -1,0 +1,98 @@
+/* Glitch effect for project banner ASCII art */
+
+.glitch-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.glitch-wrapper::before,
+.glitch-wrapper::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  font-family: var(--font-mono);
+  font-size: clamp(6px, 1vw, 10px);
+  line-height: 1.15;
+  letter-spacing: 0.05em;
+  white-space: pre;
+  overflow: hidden;
+}
+
+.glitch-wrapper::before {
+  color: var(--accent-primary);
+  animation: glitch-anim-1 7s infinite;
+}
+
+.glitch-wrapper::after {
+  color: var(--accent-secondary);
+  animation: glitch-anim-2 7s 0.15s infinite;
+}
+
+@keyframes glitch-anim-1 {
+  0%,
+  93%,
+  100% {
+    opacity: 0;
+    transform: none;
+    clip-path: none;
+  }
+  94% {
+    opacity: 0.75;
+    transform: translate(-4px, -1px);
+    clip-path: inset(15% 0 55% 0);
+  }
+  95% {
+    opacity: 0.75;
+    transform: translate(4px, 2px);
+    clip-path: inset(60% 0 10% 0);
+  }
+  96% {
+    opacity: 0.6;
+    transform: translate(-2px, 0);
+    clip-path: inset(35% 0 40% 0);
+  }
+  97% {
+    opacity: 0;
+    transform: none;
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0%,
+  94%,
+  100% {
+    opacity: 0;
+    transform: none;
+    clip-path: none;
+  }
+  95% {
+    opacity: 0.65;
+    transform: translate(3px, 1px);
+    clip-path: inset(40% 0 30% 0);
+  }
+  96% {
+    opacity: 0.65;
+    transform: translate(-3px, -2px);
+    clip-path: inset(10% 0 65% 0);
+  }
+  97% {
+    opacity: 0;
+    transform: none;
+  }
+}
+
+/* Rainbow gradient keyframe — used by AsciiTextRenderer */
+@keyframes ascii-rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}

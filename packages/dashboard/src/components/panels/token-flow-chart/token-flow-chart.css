@@ -1,0 +1,60 @@
+/* Token Flow Waterfall panel styles */
+
+.token-flow-chart {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 6px;
+}
+
+.token-flow-legend {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  padding-right: 4px;
+}
+
+.token-flow-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.token-flow-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.token-flow-chart-area {
+  flex: 1;
+  min-height: 0;
+}
+
+.token-flow-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+/* Recharts overrides */
+.token-flow-chart .recharts-cartesian-axis-tick-value {
+  fill: var(--text-secondary);
+  font-size: 9px;
+  font-family: var(--font-mono);
+}
+
+.token-flow-chart .recharts-cartesian-grid-horizontal line,
+.token-flow-chart .recharts-cartesian-grid-vertical line {
+  stroke: var(--border-panel);
+  opacity: 0.3;
+}

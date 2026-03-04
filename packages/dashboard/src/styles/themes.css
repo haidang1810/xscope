@@ -1,0 +1,150 @@
+/* Base CSS custom properties — defaults to cyberpunk theme */
+:root {
+  --bg-primary: #0a0a1a;
+  --bg-secondary: #12121f;
+  --bg-panel: rgba(20, 20, 40, 0.85);
+  --border-panel: rgba(0, 212, 255, 0.3);
+  --text-primary: #e0e0ff;
+  --text-secondary: #888aaa;
+  --accent-primary: #ff2d95;
+  --accent-secondary: #00d4ff;
+  --accent-success: #00ff88;
+  --accent-warning: #ffaa00;
+  --accent-danger: #ff3366;
+  --glow-color: #ff2d95;
+  --glow-secondary: #00d4ff;
+  --glow-intensity: 0.6;
+  --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+  --font-display: "Inter", system-ui, sans-serif;
+  --panel-radius: 10px;
+  --panel-gap: 10px;
+  --scanlines: none;
+}
+
+/* Cyberpunk: neon pink + cyan on deep navy */
+[data-theme="cyberpunk"] {
+  --bg-primary: #0a0a1a;
+  --bg-secondary: #12121f;
+  --bg-panel: rgba(20, 20, 40, 0.85);
+  --border-panel: rgba(0, 212, 255, 0.3);
+  --text-primary: #e0e0ff;
+  --text-secondary: #888aaa;
+  --accent-primary: #ff2d95;
+  --accent-secondary: #00d4ff;
+  --accent-success: #00ff88;
+  --accent-warning: #ffaa00;
+  --accent-danger: #ff3366;
+  --glow-color: #ff2d95;
+  --glow-secondary: #00d4ff;
+  --glow-intensity: 0.6;
+  --scanlines: none;
+}
+
+/* Matrix: pure green phosphor on black */
+[data-theme="matrix"] {
+  --bg-primary: #000000;
+  --bg-secondary: #001100;
+  --bg-panel: rgba(0, 20, 0, 0.9);
+  --border-panel: rgba(0, 255, 65, 0.25);
+  --text-primary: #00ff41;
+  --text-secondary: #007a1e;
+  --accent-primary: #00ff41;
+  --accent-secondary: #003b00;
+  --accent-success: #00ff41;
+  --accent-warning: #aaff00;
+  --accent-danger: #ff0000;
+  --glow-color: #00ff41;
+  --glow-secondary: #00cc33;
+  --glow-intensity: 0.8;
+  --font-display: var(--font-mono);
+  --scanlines: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 65, 0.03) 2px,
+    rgba(0, 255, 65, 0.03) 4px
+  );
+}
+
+/* Synthwave: pink-purple gradient on deep purple */
+[data-theme="synthwave"] {
+  --bg-primary: #1a0533;
+  --bg-secondary: #220844;
+  --bg-panel: rgba(30, 10, 55, 0.88);
+  --border-panel: rgba(255, 110, 199, 0.3);
+  --text-primary: #ff6ec7;
+  --text-secondary: #b060a0;
+  --accent-primary: #ff6ec7;
+  --accent-secondary: #f97316;
+  --accent-success: #00ff88;
+  --accent-warning: #f97316;
+  --accent-danger: #ff3366;
+  --glow-color: #ff6ec7;
+  --glow-secondary: #f97316;
+  --glow-intensity: 0.7;
+  --scanlines: none;
+}
+
+/* Nord: calm arctic blue-grey */
+[data-theme="nord"] {
+  --bg-primary: #2e3440;
+  --bg-secondary: #3b4252;
+  --bg-panel: rgba(59, 66, 82, 0.85);
+  --border-panel: rgba(136, 192, 208, 0.25);
+  --text-primary: #eceff4;
+  --text-secondary: #9099aa;
+  --accent-primary: #88c0d0;
+  --accent-secondary: #81a1c1;
+  --accent-success: #a3be8c;
+  --accent-warning: #ebcb8b;
+  --accent-danger: #bf616a;
+  --glow-color: #88c0d0;
+  --glow-secondary: #81a1c1;
+  --glow-intensity: 0.2;
+  --scanlines: none;
+}
+
+/* Dracula: gothic purple on dark charcoal */
+[data-theme="dracula"] {
+  --bg-primary: #282a36;
+  --bg-secondary: #1e2029;
+  --bg-panel: rgba(40, 42, 54, 0.88);
+  --border-panel: rgba(189, 147, 249, 0.3);
+  --text-primary: #f8f8f2;
+  --text-secondary: #6272a4;
+  --accent-primary: #bd93f9;
+  --accent-secondary: #50fa7b;
+  --accent-success: #50fa7b;
+  --accent-warning: #f1fa8c;
+  --accent-danger: #ff5555;
+  --glow-color: #bd93f9;
+  --glow-secondary: #ff79c6;
+  --glow-intensity: 0.5;
+  --scanlines: none;
+}
+
+/* Terminal Green: classic CRT green on near-black */
+[data-theme="terminal-green"] {
+  --bg-primary: #0c0c0c;
+  --bg-secondary: #111111;
+  --bg-panel: rgba(15, 25, 15, 0.92);
+  --border-panel: rgba(51, 255, 51, 0.2);
+  --text-primary: #33ff33;
+  --text-secondary: #1a661a;
+  --accent-primary: #33ff33;
+  --accent-secondary: #1a661a;
+  --accent-success: #33ff33;
+  --accent-warning: #ffff33;
+  --accent-danger: #ff3333;
+  --glow-color: #33ff33;
+  --glow-secondary: #22cc22;
+  --glow-intensity: 0.6;
+  --font-display: var(--font-mono);
+  --scanlines: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(51, 255, 51, 0.04) 2px,
+    rgba(51, 255, 51, 0.04) 4px
+  );
+}

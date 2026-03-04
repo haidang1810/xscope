@@ -1,0 +1,77 @@
+/* Global base styles for XScope Dashboard */
+/* Note: Google Fonts @import lives in index.css before @import "tailwindcss" */
+
+@import "./themes.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-display);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: auto;
+  min-width: 1280px;
+  /* CRT scanlines overlay (theme-specific) */
+  background-image: var(--scanlines);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-panel);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+/* Monospace elements */
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
+}
+
+/* Glow utility class */
+.glow {
+  text-shadow: 0 0 8px var(--glow-color);
+}
+
+.glow-border {
+  box-shadow:
+    0 0 8px rgba(var(--glow-color), calc(var(--glow-intensity) * 0.5)),
+    inset 0 0 8px rgba(var(--glow-color), 0.05);
+}
+
+/* Focus ring reset — panels handle focus themselves */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}

@@ -1,0 +1,106 @@
+/* Dashboard CSS Grid layout — matches design spec ASCII art */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas:
+    "banner    banner    banner"
+    "burn      flow      context"
+    "heatmap   command   errors"
+    "heartbeat heartbeat heartbeat"
+    "score     score     hotkeys";
+  gap: var(--panel-gap);
+  padding: var(--panel-gap);
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* Grid area assignments */
+.area-banner    { grid-area: banner; }
+.area-burn      { grid-area: burn; }
+.area-flow      { grid-area: flow; }
+.area-heatmap   { grid-area: heatmap; }
+.area-context   { grid-area: context; }
+.area-command   { grid-area: command; }
+.area-errors    { grid-area: errors; }
+.area-heartbeat { grid-area: heartbeat; }
+.area-score     { grid-area: score; }
+.area-hotkeys   { grid-area: hotkeys; }
+
+/* Panel card base style */
+.panel-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--panel-radius);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.panel-card:hover {
+  border-color: var(--accent-secondary);
+  box-shadow:
+    0 0 12px rgba(0, 0, 0, 0.4),
+    0 0 1px var(--accent-secondary) inset;
+}
+
+/* Focused panel: scale up, others dim */
+.panel-card.is-focused {
+  border-color: var(--accent-primary);
+  box-shadow:
+    0 0 24px color-mix(in srgb, var(--glow-color) calc(var(--glow-intensity) * 100%), transparent),
+    0 0 2px var(--accent-primary) inset;
+  z-index: 10;
+  transform: scale(1.01);
+}
+
+.panel-card.is-dimmed {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Panel title bar */
+.panel-title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-panel);
+  flex-shrink: 0;
+}
+
+.panel-icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.panel-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-secondary);
+}
+
+.panel-content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive: min-width enforced, scroll below 1280px */
+@media (max-width: 1279px) {
+  body {
+    overflow-x: scroll;
+  }
+}
