@@ -69,7 +69,6 @@ export function SessionScoreboard() {
   const score: SessionScore = state?.score ?? DEFAULT_SCORE;
 
   const successPct = Math.round(score.commandSuccessRate * 100);
-
   return (
     <div
       style={{
@@ -130,7 +129,7 @@ export function SessionScoreboard() {
         <StatRow label="Files Deleted"   value={score.filesDeleted}   digits={3} color="var(--accent-danger)" />
         <StatRow label="Lines Generated" value={score.linesGenerated} digits={5} color="var(--text-primary)" />
         <StatRow label="Commands Run"    value={score.commandsExecuted} digits={4} color="var(--accent-warning)" />
-        <StatRow label="Success Rate"    value={successPct}           digits={3} color="var(--accent-success)" suffix="%" />
+        <StatRow label="Success Rate"    value={successPct}           digits={1} color="var(--accent-success)" suffix="%" />
       </div>
     </div>
   );

@@ -90,24 +90,57 @@ export function ProjectBanner() {
             </span>
           )}
 
-          {/* Vibe mood badge — compact inline indicator */}
+          {/* Vibe mood strip — all states with labels, current highlighted */}
           <span
-            title={moodReason || moodConfig.label}
             style={{
               display: "inline-flex",
-              alignItems: "center",
-              gap: "4px",
-              background: moodConfig.bg,
-              border: "1px solid rgba(255,255,255,0.1)",
+              alignItems: "flex-end",
+              gap: "6px",
               borderRadius: "4px",
-              padding: "1px 6px",
-              fontSize: "11px",
-              fontFamily: "var(--font-mono)",
-              color: "var(--text-primary)",
-              cursor: "default",
+              padding: "2px 6px",
+              background: "rgba(0,0,0,0.25)",
+              border: "1px solid rgba(255,255,255,0.06)",
             }}
           >
-            {moodConfig.emoji} {moodConfig.label}
+            {(Object.keys(MOOD_CONFIG) as VibeMood[]).map((m) => {
+              const cfg = MOOD_CONFIG[m];
+              const isActive = m === mood;
+              const tooltip = isActive && moodReason
+                ? `${cfg.description}\n\n${moodReason}`
+                : cfg.description;
+              return (
+                <span
+                  key={m}
+                  title={tooltip}
+                  style={{
+                    display: "inline-flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "1px",
+                    opacity: isActive ? 1 : 0.35,
+                    filter: isActive ? "none" : "grayscale(1)",
+                    transition: "all 0.3s ease",
+                    cursor: "default",
+                  }}
+                >
+                  <span style={{ fontSize: isActive ? "18px" : "14px", lineHeight: 1 }}>
+                    {cfg.emoji}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "9px",
+                      letterSpacing: "0.03em",
+                      color: isActive ? "var(--text-primary)" : "var(--text-secondary)",
+                      fontWeight: isActive ? 700 : 400,
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {cfg.label}
+                  </span>
+                </span>
+              );
+            })}
           </span>
         </div>
 

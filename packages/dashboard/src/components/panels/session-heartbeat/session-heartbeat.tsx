@@ -26,7 +26,11 @@ export function SessionHeartbeat() {
   const lastActivity = state?.lastActivityTimestamp ?? new Date().toISOString();
   const startTime = state?.sessionInfo?.startTime;
   const errors = state?.errors ?? [];
-  const hasErrors = errors.some((e) => !e.isFixed);
+  // Only show error state for unfixed errors within last 2 minutes
+  const recentCutoff = Date.now() - 120_000;
+  const hasErrors = errors.some(
+    (e) => !e.isFixed && new Date(e.timestamp).getTime() > recentCutoff,
+  );
 
   // Live uptime ticker
   const [uptime, setUptime] = useState("0s");

@@ -57,4 +57,4 @@ export const RANK_THRESHOLDS = {
 } as const;
 
 // Coffee cost for fun comparison
-export const COFFEE_COST_USD = 5;
+export const COFFEE_COST_USD = 1;

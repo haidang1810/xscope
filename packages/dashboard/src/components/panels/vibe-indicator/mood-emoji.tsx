@@ -10,16 +10,17 @@ export interface MoodConfig {
   emoji: string;
   label: string;
   bg: string;
+  description: string;
 }
 
 export const MOOD_CONFIG: Record<VibeMood, MoodConfig> = {
-  shipping:   { emoji: "🚀", label: "Shipping Fast",  bg: "rgba(0, 68, 34, 0.35)" },
-  on_fire:    { emoji: "🔥", label: "On Fire",        bg: "rgba(68, 34, 0, 0.35)" },
-  bug_hell:   { emoji: "💀", label: "Bug Hell",       bg: "rgba(68, 0, 0, 0.35)" },
-  idle:       { emoji: "😴", label: "Idle",           bg: "rgba(30, 30, 50, 0.35)" },
-  focused:    { emoji: "🎯", label: "Focused",        bg: "rgba(0, 51, 34, 0.35)" },
-  money_burn: { emoji: "💸", label: "Money Burn",     bg: "rgba(51, 34, 0, 0.35)" },
-  victory:    { emoji: "🏆", label: "Victory",        bg: "rgba(51, 51, 0, 0.35)" },
+  shipping:   { emoji: "🚀", label: "Shipping",   bg: "rgba(0, 68, 34, 0.35)",  description: "High productivity — code is flowing fast with few errors" },
+  on_fire:    { emoji: "🔥", label: "On Fire",    bg: "rgba(68, 34, 0, 0.35)",  description: "Extremely active session — rapid file changes and commands" },
+  bug_hell:   { emoji: "💀", label: "Bug Hell",   bg: "rgba(68, 0, 0, 0.35)",   description: "Multiple unfixed errors — debugging mode activated" },
+  idle:       { emoji: "😴", label: "Idle",       bg: "rgba(30, 30, 50, 0.35)", description: "No recent activity — session is resting" },
+  focused:    { emoji: "🎯", label: "Focused",    bg: "rgba(0, 51, 34, 0.35)",  description: "Steady work pace — consistent progress with low error rate" },
+  money_burn: { emoji: "💸", label: "$$$ Burn",   bg: "rgba(51, 34, 0, 0.35)",  description: "High token consumption — cost is climbing fast" },
+  victory:    { emoji: "🏆", label: "Victory",    bg: "rgba(51, 51, 0, 0.35)",  description: "Session goals achieved — all errors resolved, high score" },
 };
 
 interface Props {

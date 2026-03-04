@@ -42,39 +42,39 @@ export function App() {
           <ProjectBanner />
         </PanelCard>
 
-        <PanelCard area="burn" title="Token Burn Meter" icon="🔥">
+        <PanelCard area="burn" title="Token Burn Meter" icon="🔥" subtitle="Token consumption speed & cost">
           <TokenBurnMeter />
         </PanelCard>
 
-        <PanelCard area="flow" title="Token Flow Waterfall" icon="◬">
+        <PanelCard area="flow" title="Token Flow" icon="◬" subtitle="Input/output tokens per turn">
           <TokenFlowChart />
         </PanelCard>
 
-        <PanelCard area="context" title="Context Gauge" icon="◎">
+        <PanelCard area="context" title="Context Gauge" icon="◎" subtitle="Context window usage & remaining">
           <ContextGauge />
         </PanelCard>
 
-        <PanelCard area="heatmap" title="File Heatmap" icon="▦">
+        <PanelCard area="heatmap" title="File Heatmap" icon="▦" subtitle="Most modified files this session">
           <FileHeatmap />
         </PanelCard>
 
-        <PanelCard area="command" title="Command Arsenal" icon="▶">
+        <PanelCard area="command" title="Command Arsenal" icon="▶" subtitle="Tools & commands executed">
           <CommandArsenal />
         </PanelCard>
 
-        <PanelCard area="errors" title="Error Graveyard" icon="☠">
+        <PanelCard area="errors" title="Error Graveyard" icon="☠" subtitle="Errors encountered & resolved">
           <ErrorGraveyard />
         </PanelCard>
 
-        <PanelCard area="heartbeat" title="Session Heartbeat" icon="♡">
+        <PanelCard area="heartbeat" title="Heartbeat" icon="♡" subtitle="Real-time session activity pulse">
           <SessionHeartbeat />
         </PanelCard>
 
-        <PanelCard area="score" title="Scoreboard" icon="★">
+        <PanelCard area="score" title="Scoreboard" icon="★" subtitle="Productivity rank & session stats">
           <SessionScoreboard />
         </PanelCard>
 
-        <PanelCard area="hotkeys" title="Hotkeys" icon="⌨">
+        <PanelCard area="hotkeys" title="Hotkeys" icon="⌨" subtitle="Keyboard shortcuts">
           <HotkeyReference />
         </PanelCard>
       </DashboardGrid>
