@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 import { resolve } from "node:path";
 import { DEFAULT_PORT } from "@xscope/shared";
 import { findActiveSession } from "./session-finder";
@@ -14,7 +15,9 @@ const args = process.argv.slice(2);
 const projectPath = args.find((a) => !a.startsWith("-")) || process.cwd();
 const port = Number(args.find((a) => a.startsWith("--port="))?.split("=")[1]) || DEFAULT_PORT;
 const noOpen = args.includes("--no-open");
-const dashboardDistPath = resolve(import.meta.dir, "../../dashboard/dist");
+// Resolve dashboard dist: works from both src/ (dev) and dist/ (built)
+const cliDir = resolve(import.meta.dir, "..");
+const dashboardDistPath = resolve(cliDir, "../dashboard/dist");
 
 const log = (msg: string) => console.log(`\x1b[36m[XScope]\x1b[0m ${msg}`);
 const logError = (msg: string) => console.error(`\x1b[31m[XScope]\x1b[0m ${msg}`);
@@ -22,7 +25,12 @@ const logError = (msg: string) => console.error(`\x1b[31m[XScope]\x1b[0m ${msg}`
 log(`Starting... watching project: ${projectPath}`);
 
 // --- Find active session ---
-const session = findActiveSession(projectPath);
+// Try project-specific first, then scan all projects as fallback
+let session = findActiveSession(projectPath);
+if (!session) {
+  log("No session for this project, scanning all projects...");
+  session = findActiveSession();
+}
 if (!session) {
   logError("No active Claude Code session found.");
   logError("Make sure Claude Code has run in this project.");

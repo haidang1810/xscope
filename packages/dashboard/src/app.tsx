@@ -87,11 +87,7 @@ function HotkeyReference() {
   const keys: [string, string][] = [
     ["T", "Cycle theme"],
     ["F", "Toggle fullscreen"],
-    ["M", "Toggle mute"],
     ["R", "Reset session"],
-    ["1-9", "Focus panel"],
-    ["Esc", "Unfocus panel"],
-    ["Dbl-click", "Focus panel"],
   ];
 
   return (

@@ -2,12 +2,13 @@
   "name": "@xscope/cli",
   "version": "0.1.0",
   "type": "module",
-  "main": "./src/index.ts",
+  "main": "./dist/index.js",
   "bin": {
-    "xscope": "./src/index.ts"
+    "xscope": "./dist/index.js"
   },
   "scripts": {
     "dev": "bun run --watch src/index.ts",
+    "build": "bun build ./src/index.ts --outdir ./dist --target bun --minify && chmod +x ./dist/index.js",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

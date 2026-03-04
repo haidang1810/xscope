@@ -6,7 +6,10 @@
     "dev": "bun run --filter '*' dev",
     "dev:cli": "bun run --filter @xscope/cli dev",
     "dev:dashboard": "bun run --filter @xscope/dashboard dev",
-    "build": "bun run --filter @xscope/dashboard build",
+    "build": "bun run --filter @xscope/dashboard build && bun run --filter @xscope/cli build",
+    "build:dashboard": "bun run --filter @xscope/dashboard build",
+    "build:cli": "bun run --filter @xscope/cli build",
+    "link": "cd packages/cli && bun link",
     "typecheck": "bun run --filter '*' typecheck"
   }
 }
